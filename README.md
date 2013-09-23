@@ -9,4 +9,4 @@ DataSift HTTP Push REST endpoint with SQL persistence. Utilises node-orm2 with s
 * PostgreSQL
 * Amazon Redshift
 * SQLite
-* MongoDB (beta, missing aggregation for now)
+* MongoDB
