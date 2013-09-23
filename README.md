@@ -1,4 +1,4 @@
-datasift-mysql
+datasift-sql
 ==============
 
 **STATUS: Unstable - work in progress**
