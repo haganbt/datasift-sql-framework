@@ -29,20 +29,27 @@ orm.connect(opts, function (err, db) {
     return;
   }
 
+  // Globally set interaction id on all tables
+  db.settings.set("properties.primary_key", "interaction_id");
+  
   // Load models
   db.load("./lib/models/models", function (err) {  
     if (err) {
-        console.log("Cannot load models", err);
+      console.log("Failed to load models: ", err);
     }
     // loaded!
-    var Person = db.models.person;
-    var Pet    = db.models.pet;
+    var Interaction = db.models.interaction;
+    var Tags    = db.models.tags;
     
     // Drop and recreate schema
     db.drop(function () {
-        // dropped all tables from defined models (Person and Pet)
-      Person.sync(function () {
-        // created tables for Person model
+        // dropped all tables from defined models
+      Interaction.sync(function () {
+        // created tables for interaction model
+      });
+      
+      Tags.sync(function () {
+        // created tables for tags model
       });
     });
   });
