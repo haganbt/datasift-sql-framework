@@ -3,7 +3,7 @@ datasift-mysql
 
 **STATUS: Unstable - work in progress**
 
-DataSift REST endpoint with SQL persistence. Utilises node-orm2 with support for:
+DataSift HTTP Push REST endpoint with SQL persistence. Utilises node-orm2 with support for:
 
 * MySQL
 * PostgreSQL
