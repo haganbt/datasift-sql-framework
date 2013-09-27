@@ -12,7 +12,7 @@
             request({
               uri: 'http://localhost:8080/data',
               method: 'POST',
-              body: fs.readFileSync('./test/sample_data/20mb.json'),
+              body: fs.readFileSync('./test/sample_data/sample-small.json'),
               headers: {
                 'Content-Type': 'application/json'
               }
