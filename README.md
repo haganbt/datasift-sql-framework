@@ -38,8 +38,8 @@ This implementation extracts each of these to seperate records and hence duplica
 ```
 Current list tables are:
 
-* <code>LINKS<code>
-* <code>TAGS<code>
+* <code>LINKS</code>
+* <code>TAGS</code>
 
 
 
