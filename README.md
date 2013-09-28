@@ -3,7 +3,7 @@ datasift-sql
 
 **STATUS: Unstable - work in progress**
 
-DataSift HTTP Push REST endpoint with SQL persistence. Utilises node-orm2 with support for:
+DataSift HTTP Push REST endpoint with SQL persistence. Utilizes node-orm2 with support for:
 
 * MySQL
 * PostgreSQL
@@ -13,9 +13,10 @@ DataSift HTTP Push REST endpoint with SQL persistence. Utilises node-orm2 with s
 
 ### Schema
 
-The <code>interaction.id</code> is used excluslvely across all tables as a primary key, with the exception of list tables where duplicates are supported. 
+The <code>interaction.id</code> is used exclusively across all tables as a primary key, with the exception of list tables where duplicate interaction.id's are supported. 
 
 **List Tables**
+
 Interactions containing list items can contain multiple values. For example, and interaction containing a link, may have the following URL property:
 ```javascript
 {
