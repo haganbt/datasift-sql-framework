@@ -13,8 +13,13 @@ DataSift HTTP Push REST endpoint with SQL persistence. Utilizes node-orm2 with s
 
 ### Schemas
 
-**example** 	- simple example schema for getting started
-**complete** 	- schema supporting all current data properties
+**example**
+
+Simple example schema for getting started
+
+**complete**
+
+Schema supporting all current data properties
 
 
 ### Installation
