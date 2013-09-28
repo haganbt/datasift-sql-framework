@@ -44,5 +44,7 @@ Current list tables are:
 
 
 ### Installation
+* Edit the DB config settings within /lib/config/database.json
 * Install package dependencies - <code>npm install</code>
-* Configure a DataSift HTTP Push endpoint to http://[your_host.com]:3000/data with new line delimited JSON format.
+* Configure a DataSift HTTP Push endpoint to http://[your_host.com]:8080/data with new line delimited JSON format.
+* Start app - <code>node app.js</code>
