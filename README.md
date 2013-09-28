@@ -28,12 +28,12 @@ Interactions containing list items can contain multiple values. For example, and
 This implementation extracts each of these to seperate records and hence duplicate interaction id's can be present in list tables. The above may look like:
 
 ```
-+----------------------------------+-----------+------------------+----------+
-| id                               | title     | url              | links_id |
-+----------------------------------+-----------+------------------+----------+
-| 1e2dac687b98ab80e07485ec9351e3b6 | will.i.am | http://will.i.am |        1 |
-| 1e2dac687b98ab80e07485ec9351e3b6 | will.i.am | http://will.i.am |        2 |
-+----------------------------------+-----------+------------------+----------+
++----------------------------------+-----------+----------------------+----------+
+| id                               | title     | url                  | links_id |
++----------------------------------+-----------+----------------------+----------+
+| 1e2dac687b98ab80e07485ec9351e3b6 | will.i.am | http://will.i.am     |        1 |
+| 1e2dac687b98ab80e07485ec9351e3b6 | ADK Radio | http://adk-radio.net |        2 |
++----------------------------------+-----------+----------------------+----------+
 ```
 Current list tables are:
 
