@@ -48,3 +48,6 @@ Current list tables are:
 * Install package dependencies - <code>npm install</code>
 * Configure a DataSift HTTP Push endpoint to http://[your_host.com]:8080/data with new line delimited JSON format.
 * Start app - <code>node app.js</code>
+
+### Todo
+* Support for multiple models e.g. simple, complete and use case specific
