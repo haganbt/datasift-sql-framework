@@ -1,5 +1,5 @@
-datasift-sql
-==============
+datasift-sql-framework
+======================
 
 **STATUS: Unstable - work in progress**
 
