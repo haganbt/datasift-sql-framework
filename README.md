@@ -13,8 +13,10 @@ DataSift HTTP Push REST endpoint with SQL persistence. Utilises node-orm2 with s
 
 ### Schema
 
-**LINKS**
-Interactions containing links can contain multiple items, for example:
+The <code>interaction.id</code> is used excluslvely across all tables as a primary key, with the exception of list tables where duplicates are supported. 
+
+**List Tables**
+Interactions containing list items can contain multiple values. For example, and interaction containing a link, may have the following URL property:
 ```javascript
 {
     "url": [
@@ -23,7 +25,21 @@ Interactions containing links can contain multiple items, for example:
     ]
 }
 ```
-This implementation extracts each of these to seperate records and hence duplicate interaction id's can be present in this table.
+This implementation extracts each of these to seperate records and hence duplicate interaction id's can be present in list tables. The above may look like:
+
++----------------------------------+-----------+------------------+----------+
+| id                               | title     | url              | links_id |
++----------------------------------+-----------+------------------+----------+
+| 1e2dac687b98ab80e07485ec9351e3b6 | will.i.am | http://will.i.am |        1 |
+| 1e2dac687b98ab80e07485ec9351e3b6 | will.i.am | http://will.i.am |        2 |
++----------------------------------+-----------+------------------+----------+
+
+Current list tables are:
+
+* <code>LINKS<code>
+* <code>TAGS<code>
+
+
 
 ### Installation
 * Install package dependencies - <code>npm install</code>
