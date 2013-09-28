@@ -26,7 +26,7 @@ Interactions containing list items can contain multiple values. For example, and
     ]
 }
 ```
-This implementation extracts each of these to seperate records and hence duplicate interaction id's can be present in list tables. The above may look like:
+This implementation extracts each of these to seperate records and hence duplicate interaction id's can be present in list tables. The <code>LINKS</code> table entrances for the aboveexample may look like:
 
 ```
 +----------------------------------+-----------+----------------------+----------+
