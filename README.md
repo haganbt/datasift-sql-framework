@@ -42,9 +42,7 @@ As default, the "default" processor will be used for new models.
 
 ### Default Processor
 
-The default processor is a generic processor that will attempt to guess what data to insert in to appropriate tables.
-
-It does this by assuming that the table and field names are mapped to associated DataSift JSON objects. For example:
+The default processor is a generic processor that will attempt to guess what data to insert in to appropriate tables. It does this by assuming that the table and fields defined in the model file are named acording to the associated DataSift JSON objects. For example:
 
  - twitter.user data object maps to the twitter_user table
  - interaction object data object maps to the interaction table
