@@ -13,15 +13,32 @@ Features:
 
 ### Database Schema
 
-Schemas are defined using model files located within <code>/lib/models</code> directory. Set which model to use within <code>/lib/config/model.json</code>.
+Schemas are defined using model files located within <code>/lib/models</code> directory. 
 
-**example**
+Simply set which model to use within <code>/lib/config/model.json</code>.
 
-Simple example schema for getting started
+**simple**
+
+A basic schema designed for simplicity.
 
 **complete**
 
-Schema supporting all current data properties
+A rich schema flattening all data objects in to associated tables.
+
+### Processors
+
+A processor is a file that is called when each new interaction is recived. These are located in <code>/lib/processors</code>.
+
+Processors are used to manipulate and process the incoming data an preform tasks such as inserting in to the database.
+
+
+### Defining A Custom Schema
+
+Creating a custom schema can be done by creating a new model file within the <code>/lib/models</code> directory.
+
+Configure the model to be used by setting the name within <code>/lib/config/model.json</code> file.
+
+As default, the "default" processor will be used for new models. 
 
 
 ### Installation
