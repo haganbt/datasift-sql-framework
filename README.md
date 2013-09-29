@@ -3,13 +3,13 @@ datasift-sql-framework
 
 **STATUS: Unstable - work in progress**
 
-DataSift HTTP Push REST endpoint with SQL persistence. Utilizes node-orm2 with support for:
+DataSift HTTP Push REST endpoint with SQL persistence. 
 
-* MySQL
-* PostgreSQL
-* Amazon Redshift
-* SQLite
-* MongoDB
+Features:
+* An HTTP REST endpoint for DataSift push delivery
+* An extensible framework to support custom DB models and custom data processing requirements
+* Default example schemas
+* Utilizes node-orm2 with support for MySQL, PostgreSQL, Amazon Redshift, SQLite, MongoDB
 
 ### Schemas
 
