@@ -27,7 +27,7 @@ A rich schema flattening all data objects in to associated tables.
 
 ### Processors
 
-A processor is a file that is called when each new interaction is recived. These are located in <code>/lib/processors</code>.
+A processor is a file that is called when each new interaction is received. These are located in <code>/lib/processors</code>.
 
 Processors are used to manipulate and process the incoming data an preform tasks such as inserting in to the database.
 
