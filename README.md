@@ -11,7 +11,9 @@ Features:
 * Default example schemas
 * Utilizes node-orm2 with support for MySQL, PostgreSQL, Amazon Redshift, SQLite, MongoDB
 
-### Schemas
+### Database Schema
+
+Schemas are defined using model files located within <code>/lib/models</code> directory. Set which model to use within <code>/lib/config/model.json</code>.
 
 **example**
 
@@ -23,7 +25,7 @@ Schema supporting all current data properties
 
 
 ### Installation
-* Edit the DB config settings within /lib/config/database.json
+* Edit the DB config settings within <code>/lib/config/database.json</code>
 * Install package dependencies - <code>npm install</code>
 * Configure a DataSift HTTP Push endpoint to http://[your_host.com]:8080/data with new line delimited JSON format.
 * Start app - <code>node app.js</code>
