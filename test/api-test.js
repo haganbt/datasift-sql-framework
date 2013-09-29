@@ -4,7 +4,7 @@
       , fs			= require('fs')
       ;
 
-  vows.describe('DataSift MySQL API').addBatch({
+  vows.describe('SQL framework API').addBatch({
     "When using the API": {
       "testing the push delivery endpoint": {
         "A POST to /data": {
