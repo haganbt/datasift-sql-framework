@@ -9,8 +9,8 @@ vows.describe('SQL framework utils').addBatch({
 	        return utils.loadProcessor('foo');
          },
         'the default processor is returned': function (topic) {
-        	assert.isString(topic);
-        	assert.deepEqual(topic, '../lib/processors/default');
+        	assert.isBoolean(topic);
+        	assert.isFalse(topic);
         }
    },
    
