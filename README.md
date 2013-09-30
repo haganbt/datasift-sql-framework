@@ -23,9 +23,9 @@ A processor is a file that is called when each new interaction is received. Thes
 Processors are used to manipulate and process the incoming data and preform tasks such as inserting in to the database.
 
 
-### Custom Processor and Schemas
+### Custom schemas and processors
 
-To create a new schema:
+To create a new schema and associated processor:
 
 * Create a new model file: e.g. <code>/lib/models/brand-monitor.js</code>
 * Creat an associated processor file e.g. <code>/lib/processors/brand-monitor.js</code>
