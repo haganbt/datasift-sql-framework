@@ -93,6 +93,10 @@ function Example() {
 module.exports = Example;
 ```
 
+### Default Processor
+
+TODO
+
 ### Installation
 * Edit the DB config settings within <code>/lib/config/database.json</code>
 * Install package dependencies - <code>npm install</code>
