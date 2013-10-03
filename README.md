@@ -13,23 +13,42 @@ Features:
 
 ## Database Schema
 
-Schemas are defined using model files. To create a custom model, an extension can be created within the <code>/extension</code> directory.
 
+**complete**
 
+TODO
+
+**simple**
+
+TODO
+
+** template**
+
+TODO
 
 
 ## Extension Framework
 
-An extension is amde up of a model file and an optional processor file. If no processor file is defined, the default processor will be used.
+An extension is made up of a model file and an optional processor file. If no processor file is defined, the default processor will be automatically used.
 
-To create a custom model and optional processor:
+To create a new extension (custom model and optional processor):
 
 * Create a new folder within the <code>/extension</code> directory e.g. <code>/extension/brand-monitor</code>.
 * Create a model file using the same name as the folder, with a '.model.js' extention e.g. <code>/extension/brand-monitor/brand-monitor.model.js</code>.
 * Edit the <code>/lib/config/extension.json</code> file and set the <code>definition_name</code> parameter to be the same name used for the extention folder e.g. 'brand-monitor'.
 
+At this point, starting the application would use the new model file, and the default processor. To overwrite the default processor:
+
+* Create a processor file using the same name as the folder, with a '.processor.js' extention e.g. <code>/extension/brand-monitor/brand-monitor.processor.js</code>.
+
+Restarting the application will load the new processor.
+
+NOTE: A template extension can be found within the <code>/extension/template</code> directory. This can be used to copy/paste as a starting point for a new extension.
+
+
 ### Custom Models
 
+TODO
 
 The supported types are:
 
@@ -42,7 +61,7 @@ The supported types are:
 - `point`: A N-dimensional point (not generally supported);
 - `binary`: Binary data.
 
-```json
+```javascript
 module.exports = function (db, cb) {
   
   // interaction table
@@ -56,25 +75,23 @@ module.exports = function (db, cb) {
 };
 ```
 
-
 ### Custom Processors
 
-A processor is a file that is called when each new interaction is received. These are located in <code>/lib/processors</code>.
+TODO
 
-Processors are used to manipulate and process the incoming data and preform tasks such as inserting in to the database.
+```javascript
+function Example() {
 
+	Example.fn = Example.prototype;
+	
+	Example.fn.process = function (models, item, id, ts) {
+		// processor logic
+	};
 
-### Custom schemas and processors
+};
 
-To create a new schema and associated processor:
-
-* Create a new model file: e.g. <code>/lib/models/brand-monitor.js</code>
-* Creat an associated processor file e.g. <code>/lib/processors/brand-monitor.js</code>
-* Configure the model to use within <code>/lib/config/model.json</code>.
-
-**NOTE: both the model file and associated processor file must be created with identical names.**
-
-
+module.exports = Example;
+```
 
 ### Installation
 * Edit the DB config settings within <code>/lib/config/database.json</code>
