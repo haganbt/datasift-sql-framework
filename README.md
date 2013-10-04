@@ -34,12 +34,14 @@ An extension is made up of a model file and an optional processor file. If no pr
 To create a new extension (custom model and optional processor):
 
 * Create a new folder within the <code>/extension</code> directory e.g. <code>/extension/brand-monitor</code>.
-* Create a model file using the same name as the folder, with a '.model.js' extention e.g. <code>/extension/brand-monitor/brand-monitor.model.js</code>.
 * Edit the <code>/lib/config/extension.json</code> file and set the <code>definition_name</code> parameter to be the same name used for the extention folder e.g. 'brand-monitor'.
+
+* Create a model.js file within the new extension folder e.g. <code>/extension/brand-monitor/model.js</code>.
+
 
 At this point, starting the application would use the new model file, and the default processor. To overwrite the default processor:
 
-* Create a processor file using the same name as the folder, with a '.processor.js' extention e.g. <code>/extension/brand-monitor/brand-monitor.processor.js</code>.
+* Create a processor.js file e.g. <code>/extension/brand-monitor/brand-monitor.processor.js</code>.
 
 Restarting the application will load the new processor.
 
