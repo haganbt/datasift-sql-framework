@@ -1,3 +1,7 @@
+/*
+ * SIMPLE - An example processor and model designed for simplicity 
+ */
+
 'use strict';
 
 function Simple() {

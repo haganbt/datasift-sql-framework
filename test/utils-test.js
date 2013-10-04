@@ -8,10 +8,10 @@ vows.describe('SQL framework utils').addBatch({
          topic: function () {
 	        return utils.loadProcessor('foo');
          },
-        'the default processor is returned': function (topic) {
-        	assert.isBoolean(topic);
-        	assert.isFalse(topic);
-        }
+        'the default processor function is returned': function (topic) {
+        	assert.isFunction(topic);
+        	assert.deepEqual(topic.name, 'Default');
+        }       
    },
    
     'loading a processor that exists': {
@@ -19,8 +19,8 @@ vows.describe('SQL framework utils').addBatch({
 	        return utils.loadProcessor('example');
          },
         'the specified processor is returned': function (topic) {
-        	assert.isString(topic);
-        	assert.deepEqual(topic, '../lib/processors/example');
+        	assert.isFunction(topic);
+        	assert.deepEqual(topic.name, 'Example');
         }
     },    
     

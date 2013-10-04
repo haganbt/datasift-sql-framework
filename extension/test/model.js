@@ -1,22 +1,4 @@
-
-/*
- * SIMPLE - An example model designed for simplicity 
- */
-
-
-/* 
- * See https://github.com/dresende/node-orm2/wiki
- * 
- * TYPES: The supported types are:
- * - text: A text string;
- * - number: A number value;
- * - boolean: A true/false value;
- * - date: A date object;
- * - enum: A value from a list of possible values;
- * - object: A JSON object;
- * - point: A N-dimensional point (not generally supported);
- * - binary: Binary data.
- */
+// test model used for testing the default processor
 
 module.exports = function (db, cb) {
 
