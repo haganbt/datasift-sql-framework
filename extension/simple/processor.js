@@ -65,7 +65,49 @@ function Simple() {
 					});
 				}
 			}
-		}  
+		} 
+		
+		// twitter - merge tweets and retweets
+		if(item.twitter && typeof(item.twitter) === 'object' && models.twitter){
+			
+			// tweets
+			item.twitter.twitter_id = item.twitter.id;
+			item.twitter.id 				= id;
+			item.twitter.created_at = ts;
+		
+			// user
+			if(item.twitter.user){
+				item.twitter.user_screen_name 			= item.twitter.user.screen_name;
+				item.twitter.user_name 							= item.twitter.user.name;
+				item.twitter.user_description 			= item.twitter.user.description;
+				item.twitter.user_followers_count 	= item.twitter.user.followers_count;
+				item.twitter.user_friends_count 		= item.twitter.user.friends_count;
+				item.twitter.user_statuses_count 		= item.twitter.user.statuses_count;
+				item.twitter.user_location			 		= item.twitter.user.location;
+				item.twitter.user_time_zone			 		= item.twitter.user.time_zone
+			}
+			
+			// retweets
+			if(item.twitter.retweet){
+				
+				item.twitter.text 			= item.twitter.retweet.text;
+				item.twitter.is_retweet = 1;
+				
+				// user
+				item.twitter.user_screen_name 			= item.twitter.retweet.user.screen_name;
+				item.twitter.user_description 			= item.twitter.retweet.user.description;
+				item.twitter.user_followers_count 	= item.twitter.retweet.user.followers_count;
+				item.twitter.user_friends_count 		= item.twitter.retweet.user.friends_count;
+				item.twitter.user_statuses_count 		= item.twitter.retweet.user.statuses_count;
+				item.twitter.user_location			 		= item.twitter.retweet.user.location;
+				item.twitter.user_time_zone			 		= item.twitter.retweet.user.time_zone
+			}
+		
+			
+			models.twitter.create(item.twitter, function (err, items) {
+				if (err) console.log("ERROR: Insert failed for LINKS: ", JSON.stringify(err));
+			});
+		}	 
 	  
 	};
 

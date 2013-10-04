@@ -36,6 +36,28 @@ module.exports = function (db, cb) {
     }, {
       id: 'links_id' // auto generate a UUID as the default interaction.id here is not unique
   });
-   
+
+  // TWITTER
+  db.define('twitter', {
+    id                    	: { type: "text", size: 64 },
+    twitter_id            	: { type: "text", size: 128 },
+    created_at  						: Date,
+    is_retweet  						: { type: "boolean", defaultValue: 0 },
+    text                  	: { type: "text", size: 256 },    
+  	latitude  							: Number,
+    longitude  							: Number,
+    lang 				           	: { type: "text", size: 4 },    
+    in_reply_to_screen_name	: { type: "text", size: 20 },
+    in_reply_to_status_id   : { type: "text", size: 100 },
+    in_reply_to_user_id     : { type: "text", size: 30 },
+    user_name            		: { type: "text", size: 128 },
+    user_screen_name       	: { type: "text", size: 20 },
+ 		user_description        : { type: "text", size: 200 },
+  	user_followers_count  	: Number,
+    user_friends_count  		: Number, 
+   	user_statuses_count  		: Number,
+    user_location     			: { type: "text", size: 100 }, 
+    user_time_zone       		: { type: "text", size: 20 },  	          
+  });   
   return cb();
 };
