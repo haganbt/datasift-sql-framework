@@ -22,7 +22,7 @@ TODO
 
 TODO
 
-**template**
+**example**
 
 TODO
 
@@ -45,7 +45,7 @@ At this point, starting the application would use the new model file, and the de
 
 Restarting the application will load the new processor.
 
-NOTE: A template extension can be found within the <code>/extension/template</code> directory. This can be used to copy/paste as a starting point for a new extension.
+NOTE: An example extension can be found within the <code>/extension/example</code> directory. This can be used to copy/paste as a starting point for a new extension.
 
 
 ### Custom Models
