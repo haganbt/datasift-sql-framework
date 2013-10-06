@@ -11,7 +11,7 @@ Features:
 * Default example schemas
 * Utilizes node-orm2 with support for MySQL, PostgreSQL, Amazon Redshift, SQLite, MongoDB
 
-## Database Schema
+## Sample Database Schemas
 
 
 **complete**
@@ -79,7 +79,11 @@ module.exports = function (db, cb) {
 
 ### Custom Processors
 
-TODO
+Processors manage the behaviour of the incoming data. A typical behaviour is to insert the data in to the database however there are no restriction on what can be done withint he processor.
+
+A processor must expose a <code>process</code> method. This is called with each new data interaction. As default, <code>process</code> method inherits 4 data items - a list if models (defined in the extenion model file), the raw JSON data object, a timestamp (generated from interaction.created_at) and the interaction.id.
+
+An example processor may look like:
 
 ```javascript
 function Example() {
@@ -94,6 +98,18 @@ function Example() {
 
 module.exports = Example;
 ```
+
+Since the framework extends Node ORM (https://github.com/dresende/node-orm2), all of the Node ORM helper methods are available inside of a processor. For example, to insert the <code>interaction</code> data in to the <code>interaction</code> table:
+
+```javascript
+models.interaction.create([item.interaction], function (err, items) {
+	 	if (err){
+	 		console.log("ERROR: Insert failed for INTERACTION: ", err);
+	 	}
+});
+```
+
+Node ORM also supports aggregation methods such as min, max, avg, sum, count.
 
 ### Default Processor
 
