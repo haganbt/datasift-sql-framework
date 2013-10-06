@@ -6,7 +6,7 @@
   "user"     : "root",
   "password" : "",
   "query"    : {
-    "pool"     : false,
+    "pool"     : true,
     "debug"    : false
   }
 }
