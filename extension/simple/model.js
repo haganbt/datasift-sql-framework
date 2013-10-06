@@ -18,6 +18,15 @@ module.exports = function (db, cb) {
   	type        : { type: "text", size: 20 },
   });
 
+  // HASHTAGS
+  db.define('hashtags', {
+    id          : { type: "text", size: 64 },
+    created_at  : Date,
+    hashtag		 	: { type: "text", size: 128 },
+    }, {
+      id: 'hashtag_id' // auto generate a UUID as the default interaction.id here is not unique
+  });
+
  	// TAGS
   db.define('tags', {
     id      		: { type: "text", size: 64 },
@@ -57,7 +66,9 @@ module.exports = function (db, cb) {
     user_friends_count  		: Number, 
    	user_statuses_count  		: Number,
     user_location     			: { type: "text", size: 100 }, 
-    user_time_zone       		: { type: "text", size: 20 },  	          
+    user_time_zone       		: { type: "text", size: 20 },	          
   });   
+  
+  
   return cb();
 };

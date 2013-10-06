@@ -33,7 +33,22 @@ function Simple() {
 				}
 			}
 		}	
-		
+
+		// hashtags
+		if(item.interaction && item.interaction.hashtags && typeof(item.interaction.hashtags) === 'object' && models.hashtags){
+			for (var h in item.interaction.hashtags) {
+				if (item.interaction.hashtags.hasOwnProperty(h)) {
+					var eachHashtag 				= {};
+					eachHashtag.id 					= id;
+					eachHashtag.created_at 	= ts;
+					eachHashtag.hashtag			= item.interaction.hashtags[h];
+					models.hashtags.create(eachHashtag, function (err, items) {
+						if (err) console.log("ERROR: Insert failed for HASHTAGS: ", JSON.stringify(err));
+					});
+				}
+			}
+		} 
+				
 		// interaction			  
 		if(item.interaction && models.interaction){
 			
@@ -84,7 +99,7 @@ function Simple() {
 				item.twitter.user_friends_count 		= item.twitter.user.friends_count;
 				item.twitter.user_statuses_count 		= item.twitter.user.statuses_count;
 				item.twitter.user_location			 		= item.twitter.user.location;
-				item.twitter.user_time_zone			 		= item.twitter.user.time_zone
+				item.twitter.user_time_zone			 		= item.twitter.user.time_zone;
 			}
 			
 			// retweets
@@ -93,14 +108,14 @@ function Simple() {
 				item.twitter.text 			= item.twitter.retweet.text;
 				item.twitter.is_retweet = 1;
 				
-				// user
+				// retweet user
 				item.twitter.user_screen_name 			= item.twitter.retweet.user.screen_name;
 				item.twitter.user_description 			= item.twitter.retweet.user.description;
 				item.twitter.user_followers_count 	= item.twitter.retweet.user.followers_count;
 				item.twitter.user_friends_count 		= item.twitter.retweet.user.friends_count;
 				item.twitter.user_statuses_count 		= item.twitter.retweet.user.statuses_count;
 				item.twitter.user_location			 		= item.twitter.retweet.user.location;
-				item.twitter.user_time_zone			 		= item.twitter.retweet.user.time_zone
+				item.twitter.user_time_zone			 		= item.twitter.retweet.user.time_zone;
 			}
 		
 			
