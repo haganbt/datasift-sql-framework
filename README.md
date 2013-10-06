@@ -41,7 +41,7 @@ To create a new extension (custom model and optional processor):
 
 At this point, starting the application would use the new model file, and the default processor. To overwrite the default processor:
 
-* Create a processor.js file e.g. <code>/extension/brand-monitor/brand-monitor.processor.js</code>.
+* Create a processor.js file e.g. <code>/extension/brand-monitor/processor.js</code>.
 
 Restarting the application will load the new processor.
 
@@ -79,9 +79,9 @@ module.exports = function (db, cb) {
 
 ### Custom Processors
 
-Processors manage the behaviour of the incoming data. A typical behaviour is to insert the data in to the database however there are no restriction on what can be done withint he processor.
+Processors manage the behavior of the incoming data. A typical behavior is to insert the data in to the database however there are no restriction on what can be done within the processor.
 
-A processor must expose a <code>process</code> method. This is called with each new data interaction. As default, <code>process</code> method inherits 4 data items - a list if models (defined in the extenion model file), the raw JSON data object, a timestamp (generated from interaction.created_at) and the interaction.id.
+A processor must expose a <code>process</code> method. This is called with each new data interaction. As default, the <code>process</code> method inherits 4 data items - a list if models (defined in the extension model file), the raw JSON data object, a timestamp (generated from interaction.created_at) and the interaction.id.
 
 An example processor may look like:
 
