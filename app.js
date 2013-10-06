@@ -44,6 +44,7 @@ var storeRoutes = require('./lib/routes/store')({
 // Routes
 app.get('/', storeRoutes.show);
 app.get('/reset', storeRoutes.reset);
+app.get('/sync', storeRoutes.sync);
 app.post('/data', storeRoutes.save);
 
 
