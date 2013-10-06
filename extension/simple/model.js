@@ -29,9 +29,10 @@ module.exports = function (db, cb) {
   
   // MENTIONS
   db.define('mentions', {
-    id          : { type: "text", size: 64 },
-    created_at  : Date,
-    mention		 	: { type: "text", size: 128 },
+    id          			: { type: "text", size: 64 },
+    created_at  			: Date,
+    mention		 				: { type: "text", size: 128 },
+    mention_user_id		: Number
     }, {
       id: 'mention_id' // auto generate a UUID as the default interaction.id here is not unique
   });  

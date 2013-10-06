@@ -50,15 +50,16 @@ function Simple() {
 		} 
 
 		// mentions
-		if(item.interaction && item.interaction.mentions && typeof(item.interaction.mentions) === 'object' && models.mentions){
+		if(item.interaction && item.interaction.mentions && item.interaction.mention_ids && typeof(item.interaction.mentions) === 'object' && models.mentions){
 			for (var m in item.interaction.mentions) {
-				if (item.interaction.mentions.hasOwnProperty(h)) {
-					var eachMention 				= {};
-					eachMention.id 					= id;
-					eachMention.created_at 	= ts;
-					eachMention.mention			= item.interaction.mentions[m];
+				if (item.interaction.mentions.hasOwnProperty(m) && item.interaction.mention_ids.hasOwnProperty(m)) {
+					var eachMention 						= {};
+					eachMention.id 							= id;
+					eachMention.created_at 			= ts;
+					eachMention.mention					= item.interaction.mentions[m];
+					eachMention.mention_user_id	= item.interaction.mention_ids[m];
 					models.mentions.create(eachMention, function (err, items) {
-						if (err) console.log("ERROR: Insert failed for mentions: ", JSON.stringify(err));
+						if (err) console.log("ERROR: Insert failed for MENTIONS: ", JSON.stringify(err));
 					});
 				}
 			}
