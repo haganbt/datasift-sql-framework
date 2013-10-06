@@ -6,9 +6,9 @@ datasift-sql-framework
 DataSift HTTP Push REST endpoint with SQL persistence. 
 
 Features:
-* An HTTP REST endpoint for DataSift push delivery
 * An extensible framework to support custom DB models and custom data processing requirements
 * Default example schemas
+* An HTTP REST endpoint for DataSift push delivery
 * Utilizes node-orm2 with support for MySQL, PostgreSQL, Amazon Redshift, SQLite, MongoDB
 
 ## Sample Database Schemas
@@ -28,6 +28,8 @@ A sample extension that can be used to easily create a new extension.
 
 
 ## Extension Framework
+
+The extension framework offers the ability to easily create custom database schemas and optionally manipulate the data being persissted.
 
 An extension is made up of a model file and an optional processor file. If no processor file is defined, the default processor will be automatically used.
 
@@ -83,7 +85,7 @@ Processors manage the behavior of the incoming data. A typical behavior is to in
 
 A processor must expose a <code>process</code> method. This is called with each new data interaction. As default, the <code>process</code> method inherits 4 data items - a list of models (defined in the extension model file), the raw JSON data object, the interaction.id and a timestamp (generated from interaction.created_at).
 
-An example processor may look like:
+An <code>example.js</code> processor may look like:
 
 ```javascript
 function Example() {
