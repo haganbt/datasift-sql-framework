@@ -81,7 +81,7 @@ module.exports = function (db, cb) {
 
 Processors manage the behavior of the incoming data. A typical behavior is to insert the data in to the database however there are no restriction on what can be done within the processor.
 
-A processor must expose a <code>process</code> method. This is called with each new data interaction. As default, the <code>process</code> method inherits 4 data items - a list if models (defined in the extension model file), the raw JSON data object, a timestamp (generated from interaction.created_at) and the interaction.id.
+A processor must expose a <code>process</code> method. This is called with each new data interaction. As default, the <code>process</code> method inherits 4 data items - a list of models (defined in the extension model file), the raw JSON data object, the interaction.id and a timestamp (generated from interaction.created_at).
 
 An example processor may look like:
 
