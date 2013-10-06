@@ -26,6 +26,15 @@ module.exports = function (db, cb) {
     }, {
       id: 'hashtag_id' // auto generate a UUID as the default interaction.id here is not unique
   });
+  
+  // MENTIONS
+  db.define('mentions', {
+    id          : { type: "text", size: 64 },
+    created_at  : Date,
+    mention		 	: { type: "text", size: 128 },
+    }, {
+      id: 'mention_id' // auto generate a UUID as the default interaction.id here is not unique
+  });  
 
  	// TAGS
   db.define('tags', {

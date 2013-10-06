@@ -48,7 +48,22 @@ function Simple() {
 				}
 			}
 		} 
-				
+
+		// mentions
+		if(item.interaction && item.interaction.mentions && typeof(item.interaction.mentions) === 'object' && models.mentions){
+			for (var m in item.interaction.mentions) {
+				if (item.interaction.mentions.hasOwnProperty(h)) {
+					var eachMention 				= {};
+					eachMention.id 					= id;
+					eachMention.created_at 	= ts;
+					eachMention.mention			= item.interaction.mentions[m];
+					models.mentions.create(eachMention, function (err, items) {
+						if (err) console.log("ERROR: Insert failed for mentions: ", JSON.stringify(err));
+					});
+				}
+			}
+		} 
+						
 		// interaction			  
 		if(item.interaction && models.interaction){
 			
