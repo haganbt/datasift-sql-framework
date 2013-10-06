@@ -16,15 +16,15 @@ Features:
 
 **complete**
 
-TODO
+A complex schema designed for maximum data coverage.
 
-**simple**
+**simple** (default)
 
-TODO
+A basic schema designed for simplicity.
 
 **example**
 
-TODO
+A sample extension that can be used to easily create a new extension.
 
 
 ## Extension Framework
